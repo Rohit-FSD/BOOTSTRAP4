@@ -30,15 +30,16 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
-                    <span class="fa fa-sign-in"></span> Login</a>
+                    <a id="loginb"  type="button" role="button">
+                        <span class="fa fa-sign-in"></span> Login </a>
                 </span>
+                
             </div>
                
         </div>
 
     </nav>
-    <div id="loginModal" class="modal fade" role="dialog">
+    <div id="login" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <!-- Modal content-->
             <div class="modal-content">
@@ -47,29 +48,25 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <form>
-                        <div class="form-row">
-                            <div class="form-group col-sm-4">
-                                    <label class="sr-only" for="exampleInputEmail3">Email address</label>
-                                    <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email">
-                            </div>
-                            <div class="form-group col-sm-4">
-                                <label class="sr-only" for="exampleInputPassword3">Password</label>
-                                <input type="password" class="form-control form-control-sm mr-1" id="exampleInputPassword3" placeholder="Password">
-                            </div>
-                            <div class="col-sm-auto">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox">
-                                    <label class="form-check-label"> Remember me
-                                    </label>
-                                </div>
-                            </div>
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                            <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email">
                         </div>
-                        <div class="form-row">
-                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>        
+                        <div class="form-group">
+                            <label class="sr-only" for="exampleInputPassword3">Password</label>
+                            <input type="password" class="form-control form-control-sm mr-1" id="exampleInputPassword3" placeholder="Password">
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox"> Remember me
+                            </label>
                         </div>
                     </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary btn-sm">Sign in</button>
                 </div>
             </div>
         </div>
@@ -145,7 +142,7 @@
                             <div class="offset-sm-2">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                                 
-                                <button type="submit" class="btn btn-primary">Reserve</button>
+                                <button type="button" class="btn btn-primary">Reserve</button>
                                 
                             </div>
                            
@@ -170,9 +167,8 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-3 align-self-center">
-                    <a role="button" class="btn btn-block nav-link btn-warning"
-                    data-toggle="modal" 
-                    data-target="#form">Reserve Table</a>
+                    <a id="formb" role="button" class="btn btn-block nav-link btn-warning"
+                   >Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -353,6 +349,22 @@
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
+        
+        $(document).ready(function(){
+            $("#loginb").click(function(){
+                $("#login").modal("toggle");
+            });
+        });
+   
+
+        $(document).ready(function(){
+            $("#formb").click(function(){
+                $("#form").modal("toggle");
+            });
+        });
+
+    
+
         $(document).ready(function(){
             $("#mycarousel").carousel( { interval: 1000 } );
             $("#carouselButton").click(function(){
@@ -368,8 +380,8 @@
                 }
             });
         });
+       
     </script>
-
   
     
 
